@@ -4,11 +4,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main {
 	public static void main(String[] args) {
-		// otwórz plik input.txt używając try-with-resources
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(Objects.requireNonNull(Main.class.getResource("/input.txt")).openStream()))) {
 			List<NumberPair> pairs = br.lines().map(line -> {
 				String[] parts = line.split(" {3}");
@@ -35,11 +33,8 @@ public class Main {
 			System.out.println(sumTask);
 
 
-
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 }
