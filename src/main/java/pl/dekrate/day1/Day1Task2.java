@@ -1,22 +1,21 @@
-package pl.dekrate;
+package pl.dekrate.day1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class Main {
+public class Day1Task2 {
 	public static void main(String[] args) {
-		try (BufferedReader br = new BufferedReader(new InputStreamReader(Objects.requireNonNull(Main.class.getResource("/input.txt")).openStream()))) {
+		try (BufferedReader br = new BufferedReader(new InputStreamReader(Objects.requireNonNull(Day1Task1.class.getResource("/input.txt")).openStream()))) {
 			List<NumberPair> pairs = br.lines().map(line -> {
 				String[] parts = line.split(" {3}");
 				return new NumberPair(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]));
 			}).toList();
 
-			int sum = pairs.stream()
-					.sorted(Comparator.comparing(NumberPair::getA).thenComparing(NumberPair::getB))
-					.mapToInt(NumberPair::calculateDistance)
-					.sum();
 			System.out.println(pairs.stream()
 					.sorted(Comparator.comparing(NumberPair::getA).thenComparing(NumberPair::getB))
 					.mapToInt(NumberPair::calculateDistance)
@@ -31,10 +30,10 @@ public class Main {
 					.sum();
 
 			System.out.println(sumTask);
-
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 }
+
+

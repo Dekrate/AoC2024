@@ -1,4 +1,4 @@
-package pl.dekrate;
+package pl.dekrate.day1;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
